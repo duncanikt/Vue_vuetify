@@ -1,28 +1,25 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <v-app>
+    <v-container fluid>
+      <AppBar />
+      <v-row>
+        <v-col cols="12" style="margin-top: 50px;">
+            <!-- 在這裡動態顯示內容 -->
+            <router-view></router-view>
+        </v-col>
+      </v-row>
+    </v-container>
+  </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import AppBar from './components/AppBar.vue';
+import router from './router';
 
 export default {
-  name: 'App',
   components: {
-    HelloWorld
-  }
-}
+    AppBar,
+  },
+  router
+};
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
